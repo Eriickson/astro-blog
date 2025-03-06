@@ -4,7 +4,7 @@ import BlogPost from "../components/BlogPost.astro";
 
 import { siteConfig } from "../config/site-config";
 
-const posts = await Astro.glob("./posts/*.{md,mdx}");
+// const posts = import.meta.glob("./posts/*.{md,mdx}");
 ---
 
 <MainLayout title="Erickson's Blog">
@@ -15,7 +15,7 @@ const posts = await Astro.glob("./posts/*.{md,mdx}");
       </h1>
 
       <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-        {posts.map((post) => <BlogPost {...post} />)}
+        <!-- {posts.map((post) => <BlogPost {...post} />)} -->
       </div>
     </div>
   </section>
