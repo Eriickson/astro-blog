@@ -1,17 +1,14 @@
 ---
 import { ClientRouter } from "astro:transitions";
 
-// interface Props {
-//   title?: string;
-// }
+interface Props {
+  title?: string;
+}
 
-const { title, ...rest } = Astro.props;
-
-const frontmatter = rest.frontmatter;
-console.log(frontmatter);
+const { title } = Astro.props;
 
 import "../styles/global.css";
-import "../styles/blog.css"
+import "../styles/blog.css";
 ---
 
 <!doctype html>
@@ -20,7 +17,7 @@ import "../styles/blog.css"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {frontmatter.title}
+      {title}
     </title>
     <ClientRouter />
   </head>
