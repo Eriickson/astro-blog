@@ -11,7 +11,6 @@ const { post } = Astro.props;
 ---
 
 <div class="lg:flex">
-  <!-- <img class="object-cover w-full h-56 rounded-lg lg:w-64" src={post.data.image} alt={post.data.description} /> -->
   <Image
     src={post.data.image}
     class="object-cover w-full h-56 rounded-lg lg:w-64"
@@ -21,6 +20,7 @@ const { post } = Astro.props;
     quality="low"
     format="webp"
     loading="lazy"
+    transition:name={`${post.slug}-image`}
   />
 
   <div class="flex flex-col justify-between py-6 lg:mx-6">

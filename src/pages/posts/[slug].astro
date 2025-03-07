@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = (async () => {
   const posts = await getCollection("blog");
@@ -24,6 +25,14 @@ const { Content, headings } = await post.render();
   <h4 class="text-xs text-gray-400 mb-0">
     {frontmatter.author}
   </h4>
+  <Image
+    alt={frontmatter.title}
+    src={post.data.image}
+    width={600}
+    height={600}
+    class="object-cover w-full h-[250px] my-5 rounded-md"
+    transition:name={`${post.slug}-image`}
+  />
 
   <!-- Content table -->
   <h3>Content table</h3>
