@@ -7,10 +7,7 @@ import TypedBlogPost from "src/components/TypedBlogPost.astro";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async () => {
-  const [authors, blogPosts] = await Promise.all([
-    getCollection("author"),
-    getCollection("blog"),
-  ]);
+  const [authors, blogPosts] = await Promise.all([getCollection("author"), getCollection("blog")]);
 
   return authors.map((author) => ({
     params: { author: author.id },
@@ -30,15 +27,10 @@ const { blogPosts, author } = Astro.props;
       <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white">
         {siteConfig.title}
       </h1>
+      <a class="text-blue-500" href="/">Regresar</a>
 
       <div class="text-md text-gray-400 mb-0 flex flex-row mt-2">
-        <Image
-          class="rounded-full"
-          src={author.data.avatar}
-          alt={author.data.name}
-          width={50}
-          height={50}
-        />
+        <Image class="rounded-full" src={author.data.avatar} alt={author.data.name} width={50} height={50} />
 
         <div class="flex flex-col ml-5">
           <a>{author.data.name}</a>
