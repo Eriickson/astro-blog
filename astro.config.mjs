@@ -11,4 +11,5 @@ export default defineConfig({
   },
 
   integrations: [mdx()],
+  site: "https://example.com",
 });

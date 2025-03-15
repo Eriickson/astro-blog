@@ -9,7 +9,7 @@ isDraft: true
 layout: ../../layouts/BlogLayout.astro
 ---
 
-# {frontmatter.title}
+# Explorando Funciones de ES6!
 
 {/* Mostrar imagen */}
 
