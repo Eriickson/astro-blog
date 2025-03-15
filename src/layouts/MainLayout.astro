@@ -14,9 +14,11 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
       {title}
     </title>
+    <link rel="alternate" type="application/rss+xml" title="Erickson's Blog" href={new URL("rss.xml", Astro.site)} />
     <ClientRouter />
   </head>
   <body class="bg-gray-900">
